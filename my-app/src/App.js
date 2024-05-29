@@ -1,25 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { StrictMode } from 'react';
+import { PrimeReactProvider } from 'primereact/api';
+import "primereact/resources/themes/lara-light-cyan/theme.css";  
+import Login from './components/Login/Login.js'
 
-function App() {
+export default function MyApp({ Component, pageProps }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StrictMode>
+      <PrimeReactProvider>
+        <Login/>
+      </PrimeReactProvider>
+    </StrictMode>
   );
 }
-
-export default App;
